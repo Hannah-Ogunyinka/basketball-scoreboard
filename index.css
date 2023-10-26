@@ -1,12 +1,113 @@
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture,
 body {
   margin: 0;
 }
 
-h3 {
-  font-family: "cursed_timer_ulilregular", Arial, sans-serif;
+/* reset ul */
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* ----Custom properties ---- */
+:root {
+  /* Colors */
+  --pink: #fda4af;
+  --black: #080001;
+  --green: #6ee7b7;
+  --grey: #eeeeee;
+  --blue: #0c4a6e;
+  --white: #ffffff;
+
+  /* font-sizes */
+  font-size: 16px;
+  --fs-1: ;
+  --fs-2: ;
+  --fs-3: ;
+  --fs-4: ;
+  --fs-5: ;
+  --fs-6: ;
+
+  /* font-families */
+  --ff-inter: "Inter", sans-serif;
+  --ff-timer: "cursed_timer_ulilregular", Arial, sans-serif;
+}
+
+/*ultilities*/
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+body {
+  margin: 0;
+  background-color: var(--blue);
+  color: var(--grey);
+}
+
+h2 {
+  font-family: var(--ff-timer);
 }
 
 .container {
   display: flex;
   justify-content: space-around;
+}
+
+.scoreboard-container {
+  padding: 4rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+}
+
+.home {
+  grid-column: 1/2;
+}
+
+.timer {
+  grid-column: 2/3;
+}
+
+.guest {
+  grid-column: 3/4;
+}
+
+@media (max-width: 768px) {
+  .scoreboard-container {
+    padding: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .home {
+    grid-column: 1;
+  }
+
+  .timer {
+    grid-column: 1;
+  }
+
+  .guest {
+    grid-column: 1;
+  }
 }
