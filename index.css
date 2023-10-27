@@ -76,10 +76,16 @@ h2 {
 
 .scoreboard-container {
   display: grid;
+  max-width: 1440px;
+  margin-inline: auto;
   padding: 4em;
   grid-template-columns: repeat(3, 1fr); /* Three columns on top */
   grid-template-rows: repeat(2, auto);
   grid-gap: 10px;
+}
+
+.timer {
+  min-width: 300px;
 }
 
 .winner {
