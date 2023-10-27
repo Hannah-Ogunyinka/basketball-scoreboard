@@ -75,49 +75,31 @@ h2 {
 }
 
 .scoreboard-container {
-  padding: 4rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  display: grid;
+  padding: 4em;
+  grid-template-columns: repeat(3, 1fr); /* Three columns on top */
+  grid-template-rows: repeat(2, auto);
   grid-gap: 10px;
 }
 
-.home {
-  grid-column: 1/2;
-}
-
-.timer {
-  grid-column: 2/3;
-}
-
-.guest {
-  grid-column: 3/4;
-}
-
 .winner {
-  grid-column: 1/4;
-  text-align: center;
+  grid-column: 1 / span 3;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 780px) {
   .scoreboard-container {
-    padding: 2rem;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: repeat(4, auto);
+    padding: 2em;
   }
 
   .home {
-    grid-column: 1/-1;
+    grid-column: 1 / span 3;
   }
-
   .timer {
-    grid-column: 1/-1;
+    grid-column: 1 / span 3;
   }
-
   .guest {
-    grid-column: 1/-1;
-  }
-  .winner {
-    grid-column: 1/4;
-    text-align: center;
+    grid-column: 1 / span 3;
   }
 }
